@@ -1,0 +1,374 @@
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+}
+
+.calculator {
+  backdrop-filter: blur(18px);
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 18px;
+  padding: 35px;
+  width: 340px;
+  box-shadow:
+    0 8px 32px rgba(0,0,0,0.35);
+  border: 1px solid rgba(255,255,255,0.2);
+  color: white;
+}
+
+input[type="text"],
+select {
+  width: 100%;
+  padding: 12px;
+  margin-top: 8px;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  box-sizing: border-box;
+  background: rgba(255,255,255,0.15);
+  color: white;
+  transition: 0.3s;
+}
+
+input:focus,
+select:focus {
+  background: rgba(255,255,255,0.25);
+  box-shadow: 0 0 10px rgba(0,150,255,0.6);
+}
+
+button {
+  width: 100%;
+  padding: 14px;
+  background: linear-gradient(135deg, #00c6ff, #0072ff);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  transition: 0.25s;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.3);
+}
+
+button:active {
+  transform: scale(0.97);
+}
+
+#resultado {
+  margin-top: 20px;
+  padding: 15px;
+  background: rgba(255,255,255,0.15);
+  border-radius: 10px;
+  font-weight: bold;
+  animation: aparecer 0.4s ease;
+}
+
+.grupo {
+  margin-bottom: 15px;
+}
+
+.checks {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.check-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(255,255,255,0.12);
+  padding: 10px;
+  border-radius: 8px;
+  transition: 0.2s;
+}
+
+.check-item:hover {
+  background: rgba(255,255,255,0.22);
+}
+
+.check-item input {
+  transform: scale(1.3);
+  cursor: pointer;
+}
+
+@keyframes aparecer {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* SWITCH IPHONE */
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 46px;
+  height: 24px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* FONDO */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  inset: 0;
+  background-color: rgba(255,255,255,0.3);
+  border-radius: 34px;
+  transition: .4s;
+}
+
+/* SLIDER CIRCULO */
+.slider::before {
+  position: absolute;
+  content: "";
+  height: 18px;
+  width: 18px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  border-radius: 50%;
+  transition: .4s;
+}
+
+/* ACTIVO */
+.switch input:checked + .slider {
+  background: linear-gradient(135deg,#00c6ff,#0072ff);
+}
+
+.switch input:checked + .slider::before {
+  transform: translateX(22px);
+}
+
+.check-item span {
+  font-weight: 500;
+  letter-spacing: 0.3px;
+}
+
+/* CLIMAS DINÁMICOS */
+
+body.frio {
+  background: linear-gradient(135deg,#0f2027,#203a43,#1b6ca8);
+}
+
+body.templado {
+  background: linear-gradient(135deg,#56ab2f,#a8e063);
+}
+
+body.calor {
+  background: linear-gradient(135deg,#ff512f,#dd2476);
+}
+
+body {
+  transition: background 0.8s ease;
+}
+
+body.frio .calculator {
+  background: rgba(120,180,255,0.15);
+}
+
+body.templado .calculator {
+  background: rgba(255,255,255,0.18);
+}
+
+body.calor .calculator {
+  background: rgba(255,120,120,0.18);
+}
+
+.calculator {
+  transition: 0.6s;
+}
+
+/* ANIMACION CLIMA */
+
+#climaAnimacion {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.particula {
+  position: absolute;
+  font-size: 22px;
+  animation: caer 6s linear infinite;
+  opacity: 0.6;
+}
+
+@keyframes caer {
+  from {
+    transform: translateY(-10vh);
+  }
+  to {
+    transform: translateY(110vh);
+  }
+}
+
+/* ESTILO SELECT */
+
+select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+
+  background: rgba(255,255,255,0.15);
+  color: white;
+  font-weight: 500;
+
+  background-image: url("data:image/svg+xml;utf8,<svg fill='white' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 18px;
+
+  cursor: pointer;
+}
+
+/* OPCIONES */
+select option {
+  background: #203a43;
+  color: white;
+}
+
+.particula {
+  position: absolute;
+  animation: caer linear infinite;
+  opacity: 0.7;
+  user-select: none;
+}
+
+/* LOADER INICIAL */
+
+#loader {
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(135deg,#0f2027,#203a43,#2c5364);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  color: white;
+  transition: opacity 0.6s ease, visibility 0.6s;
+}
+
+@keyframes girar {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* OCULTA LOADER */
+#loader.oculto {
+  opacity: 0;
+  visibility: hidden;
+}
+
+/* LOGO ANIMADO */
+
+.logo-container{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  animation: aparecerLogo 1s ease;
+}
+
+.logo{
+  font-size:60px;
+  animation: flotar 2s ease-in-out infinite;
+}
+
+.logo-text{
+  margin-top:10px;
+  letter-spacing:2px;
+  opacity:0.8;
+}
+
+/* ANIMACIONES */
+
+@keyframes flotar{
+  0%,100%{ transform: translateY(0); }
+  50%{ transform: translateY(-10px); }
+}
+
+@keyframes aparecerLogo{
+  from{
+    opacity:0;
+    transform: scale(0.7);
+  }
+  to{
+    opacity:1;
+    transform: scale(1);
+  }
+}
+
+/* SKELETON LOADING */
+
+#skeleton{
+  position:absolute;
+  inset:0;
+  padding:35px;
+  border-radius:18px;
+  backdrop-filter: blur(18px);
+  background: rgba(255,255,255,0.08);
+  animation: fadeSkeleton 0.5s ease;
+}
+
+.skeleton-line,
+.skeleton-box,
+.skeleton-button{
+  background: linear-gradient(
+    90deg,
+    rgba(255,255,255,0.1),
+    rgba(255,255,255,0.25),
+    rgba(255,255,255,0.1)
+  );
+  background-size:200% 100%;
+  animation: shimmer 1.4s infinite;
+  border-radius:8px;
+  margin-bottom:15px;
+}
+
+.skeleton-line{
+  height:20px;
+  width:70%;
+}
+
+.skeleton-box{
+  height:40px;
+}
+
+.skeleton-button{
+  height:45px;
+}
+
+@keyframes shimmer{
+  0%{background-position:-200% 0;}
+  100%{background-position:200% 0;}
+}
+

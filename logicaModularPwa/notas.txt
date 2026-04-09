@@ -1,0 +1,35 @@
+Glosario
+
+select = solo 1 valor
+checkbox = varios valores
+querySelectorAll('input[name="salida"]:checked') = se obtienen todos los checkbox
+
+linear-gradient	fondo moderno
+height:100vh	ocupa toda pantalla
+flex	activa centrado
+justify-content	centra horizontal
+align-items	centra vertical
+
+padding	espacio interno
+border-radius	esquinas suaves
+box-shadow	efecto flotante
+
+flex	activa layout moderno
+column	uno debajo del otro
+gap	espacio automático
+
+display: standalone	abre como APP
+start_url	pantalla inicial
+icons	icono instalable
+theme_color	color barra móvil
+
+position: fixed	cubre toda la pantalla
+z-index:9999	queda encima de todo
+spinner	animación tipo app móvil
+transition	desaparece suave
+
+flotar	logo respira/flota
+aparecerLogo	entrada suave
+escala	sensación premium
+
+lee emogis falta revisar con imagenes png

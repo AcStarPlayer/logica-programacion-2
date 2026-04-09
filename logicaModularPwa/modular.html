@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Conversor de Temperatura</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#0072ff">
+
+</head>
+<body>
+
+  <!-- LOADING SCREEN -->
+  <div id="loader">
+
+    <div class="logo-container">
+      <div class="logo">🌡️</div>
+      <h2 class="logo-text">TempApp</h2>
+    </div>
+
+  </div>
+
+  <div id="climaAnimacion"></div>
+
+  <div id="skeleton">
+
+    <div class="skeleton-line"></div>
+    <div class="skeleton-box"></div>
+    <div class="skeleton-box"></div>
+    <div class="skeleton-button"></div>
+
+  </div>
+
+  <div class="calculator">
+
+    <h1>Conversor de Temperatura</h1>
+
+    <input type="text" id="valor" placeholder="Ingrese temperatura">
+
+    <br><br>
+
+    <!-- Entrada -->
+    <div class="grupo">
+      <label>Entrada:</label>
+      <select id="entrada">
+        <option value="celsius">Celsius</option>
+        <option value="fahrenheit">Fahrenheit</option>
+        <option value="kelvin">Kelvin</option>
+      </select>
+    </div>
+    
+    <br><br>
+
+    <!-- Salida -->
+    <div class="grupo">
+
+      <label>Salida:</label>
+
+      <div class="checks">
+
+        <div class="check-item">
+          <span>🌡️ Celsius</span>
+          <label class="switch">
+            <input type="checkbox" name="salida" value="celsius">
+            <span class="slider"></span>
+          </label>
+        </div>
+
+        <div class="check-item">
+          <span>🔥 Fahrenheit</span>
+          <label class="switch">
+            <input type="checkbox" name="salida" value="fahrenheit">
+            <span class="slider"></span>
+          </label>
+        </div>
+
+        <div class="check-item">
+          <span>❄️ Kelvin</span>
+          <label class="switch">
+            <input type="checkbox" name="salida" value="kelvin">
+            <span class="slider"></span>
+          </label>
+        </div>
+
+      </div>
+
+    </div>
+
+    <button onclick="convertir()">Convertir</button>
+
+    <h3 id="resultado"></h3>
+
+  </div>
+
+  <script src="scriptModular.js"></script>
+  <script>
+    if ("serviceWorker" in navigator) {
+      navigator.serviceWorker.register("service-worker.js")
+        .then(() => console.log("✅ PWA instalada"))
+        .catch(err => console.log("Error:", err));
+    }
+  </script>
+
+</body>
+
+</html>
